@@ -2,9 +2,88 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Admins  from './Admins/Admins.jsx'
+import Teachers from './Teachers/Teachers.jsx'
+import Students from './Students/Students.jsx'
 
+// import pages for Admins
+
+// Home
+import HomeA from './Admins/pages/Home/Home.jsx'
+// User Management
+import TeacherA from './Admins/pages/UserManagement/Teacher.jsx'
+import StudentA from './Admins/pages/UserManagement/Student.jsx'
+import StaffA from './Admins/pages/UserManagement/Staff.jsx'
+// Classes
+import ClassA from './Admins/pages/Class/Class.jsx'
+import AllClassesA from './Admins/pages/Class/AllClasses.jsx'
+// Subject
+import SubjectA from './Admins/pages/Subject/Subject.jsx'
+import AllSubjectA from './Admins/pages/Subject/AllSubject.jsx'
+
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path:'/login',
+        element: <h1>Login</h1>
+      },
+      {
+        path:'admins',
+        element: <Admins />,
+        children: [
+          {
+            path:'home',
+            element: <HomeA />
+          },
+          {
+            path:'user-management/teacher',
+            element: <TeacherA />
+          },
+          {
+            path:'user-management/student',
+            element: <StudentA />
+          },
+          {
+            path:'user-management/staff',
+            element: <StaffA />
+          },
+          {
+            path:'class/class',
+            element: <ClassA />
+          },
+          {
+            path:'class/all-classes',
+            element: <AllClassesA />
+          },
+          {
+            path:'subject/subject',
+            element: <SubjectA />
+          },
+          {
+            path:'subject/all-subjects',
+            element: <AllSubjectA />
+          }
+        ]
+      },
+      {
+        path:'teachers',
+        element: <Teachers />,
+        children: []
+      },
+      {
+        path:'students',
+        element: <Students />,
+        children: []
+      }
+    ]
+  }
+])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={routes} />
   </StrictMode>,
 )
