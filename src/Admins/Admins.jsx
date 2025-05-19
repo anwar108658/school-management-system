@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 
 const Admins = () => {
   return (
-    <Layout>
+    <Layout className='!min-h-screen'>
       <SideBar/>
       <Layout>
         <Header/>

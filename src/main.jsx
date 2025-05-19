@@ -52,19 +52,19 @@ const routes = createBrowserRouter([
             element: <StaffA />
           },
           {
-            path:'class/class',
+            path:'classes/class',
             element: <ClassA />
           },
           {
-            path:'class/all-classes',
+            path:'classes/all-classes',
             element: <AllClassesA />
           },
           {
-            path:'subject/subject',
+            path:'subjects/subject',
             element: <SubjectA />
           },
           {
-            path:'subject/all-subjects',
+            path:'subjects/all-subjects',
             element: <AllSubjectA />
           }
         ]
