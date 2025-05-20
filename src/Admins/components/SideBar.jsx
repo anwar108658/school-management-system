@@ -8,7 +8,7 @@ const SideBar = () => {
   const navigate = useNavigate();
   const menuItemClassName = `
   !text-gray-200
-  [&.ant-menu-item-selected]:!bg-blue-400
+  [&.ant-menu-item-selected]:!bg-blue-500
   [&.ant-menu-item-selected]:!text-cyan-100
   [&.ant-menu-item-active]:!bg-[#030c4b]
   [&_.ant-menu-submenu-title]:!text-gray-200
