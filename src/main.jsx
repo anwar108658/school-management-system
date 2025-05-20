@@ -21,6 +21,9 @@ import AllClassesA from './Admins/pages/Class/AllClasses.jsx'
 // Subject
 import SubjectA from './Admins/pages/Subject/Subject.jsx'
 import AllSubjectA from './Admins/pages/Subject/AllSubject.jsx'
+// Announcement
+import AnnounceA from './Admins/pages/Anouncement/Announce.jsx'
+import AllAnnounceA from './Admins/pages/Anouncement/AllAnnounce.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -66,6 +69,14 @@ const routes = createBrowserRouter([
           {
             path:'subjects/all-subjects',
             element: <AllSubjectA />
+          },
+          {
+            path:'announcement/announce',
+            element: <AnnounceA />
+          },
+          {
+            path:'announcement/all-announcement',
+            element: <AllAnnounceA />
           }
         ]
       },

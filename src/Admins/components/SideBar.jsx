@@ -1,4 +1,4 @@
-import { faAddressBook, faAddressCard, faChalkboardUser, faCopy, faFile, faHouse, faPersonChalkboard, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faAddressBook, faAddressCard, faBullhorn, faChalkboardUser, faCopy, faFile, faHouse, faPersonChalkboard, faScroll, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from 'antd'
 import Sider from 'antd/es/layout/Sider'
@@ -95,11 +95,33 @@ const SideBar = () => {
         }
       ]
     },
+    {
+      key:"announcement",
+      label:"Announcement",
+      className:menuItemClassName,
+      icon:<FontAwesomeIcon icon={faBullhorn}/>,
+      children:[
+        {
+          key:"announce",
+          label:"Announcement",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faScroll}/>,
+          onClick:() => navigate("/admins/announcement/announce")
+        },
+        {
+          key:"allAnnounce",
+          label:"All Announcement",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faScroll}/>,
+          onClick:() => navigate("/admins/announcement/all-announcement")
+        }
+      ]
+    }
   ]
   return (
     <Sider
     theme='light'
-    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat`}
+    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto`}
     width={270}
     >
       <Menu items={menuItem} theme='dark' className='!bg-black/0' mode='inline'/>
