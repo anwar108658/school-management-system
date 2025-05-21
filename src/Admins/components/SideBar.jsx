@@ -1,4 +1,4 @@
-import { faAddressBook, faAddressCard, faBullhorn, faChalkboardUser, faCopy, faFile, faHouse, faPersonChalkboard, faScroll, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faAddressBook, faAddressCard, faBullhorn, faCalendar, faChalkboardUser, faCopy, faEye, faFile, faFileInvoiceDollar, faGraduationCap, faHandHoldingDollar, faHouse, faMagnifyingGlassDollar, faMoneyBill, faPenSquare, faPersonChalkboard, faScroll, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from 'antd'
 import Sider from 'antd/es/layout/Sider'
@@ -14,6 +14,7 @@ const SideBar = () => {
   [&_.ant-menu-submenu-title]:!text-gray-200
   [&.ant-menu-submenu-selected>.ant-menu-submenu-title]:!text-cyan-400
 `;
+
   const menuItem = [
     {
       key:"home",
@@ -116,8 +117,103 @@ const SideBar = () => {
           onClick:() => navigate("/admins/announcement/all-announcement")
         }
       ]
+    },
+    {
+      key:"fee",
+      label:"Fee",
+      className:menuItemClassName,
+      icon:<FontAwesomeIcon icon={faHandHoldingDollar}/>,
+      children:[
+        {
+          key:"addmissionFee",
+          label:"Addmission Fee",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faMoneyBill}/>,
+          onClick:() => navigate("/admins/fee/addmission-fee")
+        },
+        {
+          key:"monthlyFee",
+          label:"Monthly Fee",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faMoneyBill}/>,
+          onClick:() => navigate("/admins/fee/monthly-fee")
+        },
+        {
+          key:"allStudentsFeeStatus",
+          label:"All Students Fee Status",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faMagnifyingGlassDollar}/>,
+          onClick:() => navigate("/admins/fee/all-students-fee-status")
+        },
+        {
+          key:"feeHistory",
+          label:"Fee History",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faFileInvoiceDollar}/>,
+          onClick:() => navigate("/admins/fee/fee-history")
+        }
+      ]
+    },
+    {
+      key:"exam",
+      label:"Exam",
+      className:menuItemClassName,
+      icon:<FontAwesomeIcon icon={faPenSquare}/>,
+      children:[
+        {
+          key:"addExam",
+          label:"Add Exam",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faPenSquare}/>,
+          onClick:() => navigate("/admins/exam/add-exam")
+        },
+        {
+          key:"allExam",
+          label:"All Exam",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faPenSquare}/>,
+          onClick:() => navigate("/admins/exam/all-exam")
+        },
+        {
+          key:"examSched",
+          label:"Exam Sched",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faCalendar}/>,
+          onClick:() => navigate("/admins/exam/exam-sched")
+        }
+      ]
+    },
+    {
+      key:"result",
+      label:"Result",
+      className:menuItemClassName,
+      icon:<FontAwesomeIcon icon={faGraduationCap}/>,
+      children:[
+        {
+          key:"addResult",
+          label:"Add Result",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faGraduationCap}/>,
+          onClick:() => navigate("/admins/result/add-result")
+        },
+        {
+          key:"allResult",
+          label:"All Result",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faGraduationCap}/>,
+          onClick:() => navigate("/admins/result/all-result")
+        },
+        {
+          key:"viewByStudents",
+          label:"View By Students",
+          className:menuItemClassName,
+          icon:<FontAwesomeIcon icon={faEye}/>,
+          onClick:() => navigate("/admins/result/view-by-students")
+        }
+      ]
     }
   ]
+
   return (
     <Sider
     theme='light'
