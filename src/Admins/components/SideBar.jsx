@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from 'antd'
 import Sider from 'antd/es/layout/Sider'
 import { useNavigate } from 'react-router-dom'
+import "../Admins.css"
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -217,7 +218,7 @@ const SideBar = () => {
   return (
     <Sider
     theme='light'
-    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto`}
+    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto custom-scrollbar`}
     width={270}
     >
       <Menu items={menuItem} theme='dark' className='!bg-black/0' mode='inline'/>
