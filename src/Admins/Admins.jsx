@@ -6,11 +6,12 @@ import { Content } from 'antd/es/layout/layout'
 import { Outlet } from 'react-router-dom'
 
 const Admins = () => {
+  const [collapsed, setCollapsed] = React.useState(false)
   return (
     <Layout className='!min-h-screen'>
-      <SideBar/>
+      <SideBar isCollapsed={collapsed}/>
       <Layout>
-        <Header/>
+        <Header setCollapsed={setCollapsed}/>
         <Content>
           <Outlet/>
         </Content>

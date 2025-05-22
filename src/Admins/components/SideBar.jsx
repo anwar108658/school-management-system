@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import "../Admins.css"
 import SchoolLogo from "../../assets/schoolLogo.jpg"
 
-const SideBar = () => {
+const SideBar = ({isCollapsed}) => {
   const navigate = useNavigate();
   const menuItemClassName = `
   !text-gray-200
@@ -219,6 +219,8 @@ const SideBar = () => {
   return (
     <Sider
     theme='light'
+    collapsed={isCollapsed}
+    collapsedWidth={0}
     className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto custom-scrollbar !relative`}
     width={270}
     >
@@ -226,7 +228,7 @@ const SideBar = () => {
         <div className='flex items-center justify-center'>
           <img src={SchoolLogo} alt="Logo" className='w-12 h-12 rounded-full'/>
         </div>
-        <div className='text-center text-cyan-400 italic underline font-bold text-xl'>The Nova School</div>
+        {!isCollapsed&&<div className='text-center text-cyan-400 italic underline font-bold text-xl'>The Nova School</div>}
       </div>
       <Menu items={menuItem} theme='dark' className='!bg-black/0 !mt-3' mode='inline'/>
     </Sider>
