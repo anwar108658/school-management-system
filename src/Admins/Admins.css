@@ -7,7 +7,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #0887c7; /* Teal */
+  background-color: #025781; /* Teal */
   border-radius: 40px;
   border: 2px solid transparent;
   background-clip: content-box;

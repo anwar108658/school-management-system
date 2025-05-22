@@ -4,6 +4,7 @@ import { Menu } from 'antd'
 import Sider from 'antd/es/layout/Sider'
 import { useNavigate } from 'react-router-dom'
 import "../Admins.css"
+import SchoolLogo from "../../assets/schoolLogo.jpg"
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -218,10 +219,16 @@ const SideBar = () => {
   return (
     <Sider
     theme='light'
-    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto custom-scrollbar`}
+    className={`!bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('https://img.freepik.com/free-vector/abstract-background-gradient-colorful-design_677411-3431.jpg?semt=ais_hybrid&w=740')]  !bg-cover  !bg-no-repeat !h-screen overflow-auto custom-scrollbar !relative`}
     width={270}
     >
-      <Menu items={menuItem} theme='dark' className='!bg-black/0' mode='inline'/>
+      <div className='sticky top-0 z-10  flex gap-2 justify-center items-center h-18 bg-gray-500/70 hover:bg-gray-500/100 transition-all duration-800'>
+        <div className='flex items-center justify-center'>
+          <img src={SchoolLogo} alt="Logo" className='w-12 h-12 rounded-full'/>
+        </div>
+        <div className='text-center text-cyan-400 italic underline font-bold text-xl'>The Nova School</div>
+      </div>
+      <Menu items={menuItem} theme='dark' className='!bg-black/0 !mt-3' mode='inline'/>
     </Sider>
   )
 }
